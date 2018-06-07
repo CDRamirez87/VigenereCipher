@@ -67,9 +67,7 @@ void VigenereCypher::printSquare()
 void VigenereCypher::printInputVector()
 {
     for (int i = 0; i < _pageLine.size(); i++)
-    {
         std::cout << _pageLine.at(i) << std::endl;
-    }
 
     std::cout << _pageLine.size();
 }
@@ -100,9 +98,7 @@ char VigenereCypher::iterThroughKey(int& pos)
     pos++;
 
     if (pos >= _cypherKey.length() || pos < 0)
-    {
         pos = 0;
-    }
 
     char returnChar = _cypherKey[pos];
 
@@ -130,9 +126,7 @@ int VigenereCypher::searchCol(char searchTarg, int row)
     for (int i = 0; i < _BOX_WIDTH; i++)
     {
         if (_vigenereSquare[index(row, i)] == searchTarg)
-        {
             return i;
-        }
     }
 }
 
@@ -182,7 +176,7 @@ void VigenereCypher::decypherInput()
 void VigenereCypher::outputToFile()
 {
 
-    std::ofstream fOut("CypherOutput.txt");
+    std::ofstream fOut("CipherOutput.txt");
 
     if (!fOut)
     {
@@ -193,7 +187,7 @@ void VigenereCypher::outputToFile()
     for (int i = 0; i < _pageLine.size(); i++)
     {
         fOut << _pageLine.at(i);
-        i++;
+        //i++; THIS WAS THE BUG!! (Why it was there I do not know)
     }
 
 }

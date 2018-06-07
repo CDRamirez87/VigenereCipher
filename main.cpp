@@ -10,11 +10,13 @@ int main(int argc, char* argv[])
         std::cout << errorString << std::endl;
         exit(1);
     }
-
-    std::string enOrDe(argv[1]);
-
+    //Instantiate main object
     VigenereCypher newCypher(argv[2], argv[3]);
 
+    //Converts command line char pointer to string
+    std::string enOrDe(argv[1]);
+
+    //Option to encrypt or decrypt by command line
     if(enOrDe == "encrypt" || enOrDe == "Encrypt")
         newCypher.cypherInput();
     else if(enOrDe == "decrypt" || enOrDe == "Decrypt")
@@ -25,7 +27,7 @@ int main(int argc, char* argv[])
         exit(1);
     }
 
-
+    //Method to output processed data
     newCypher.outputToFile();
 
 }
