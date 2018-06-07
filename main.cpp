@@ -4,7 +4,9 @@
 
 int main(int argc, char* argv[])
 {
-    std::string errorString = "Usage: \"./VigenereCypherWin.exe 'encrypt/decrypt' 'Input Filename' 'Encryption Key'";
+    //Error string in case of improper argument usage
+    std::string errorString = "Usage: \"./VigenereCipher.exe 'encrypt/decrypt' 'Input Filename' 'Encryption Key'";
+
     if (argc != 4)
     {
         std::cout << errorString << std::endl;

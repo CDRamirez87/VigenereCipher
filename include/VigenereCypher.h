@@ -8,7 +8,7 @@
 class VigenereCypher
 {
     public:
-
+        //Constructors
         VigenereCypher();
         VigenereCypher(std::string fileName);
         VigenereCypher(std::string fileName, std::string cypherKey);
@@ -33,7 +33,7 @@ class VigenereCypher
         void outputToFile();
 
     private:
-
+        //Members
         const int _BOX_WIDTH;
         char* _vigenereSquare;
         std::string _cypherKey;
@@ -41,6 +41,7 @@ class VigenereCypher
         std::string _inFileName;
         std::vector<std::string> _pageLine;
 
+        //Private methods
         void cypherInit();
         char iterThroughKey(int& pos);
         int getCol(char inputChar);
