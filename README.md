@@ -7,8 +7,7 @@ Version 1.0
 
 ### How do I get set up? ###
 
-Once the code is compiled (or by using the .exe in /bin/Release) simply place the file to be encrypted in the same directory
-as the .exe and then run the .exe on the command line in the following format:
+Once the code is compiled simply run the .exe on the command line in the following format:
 
 >./VigenereCipher.exe ["Encrypt" or "Decrypt"] [Filename] [Encryption Key]
 
