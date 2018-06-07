@@ -4,9 +4,10 @@
 
 int main(int argc, char* argv[])
 {
+    std::string errorString = "Usage: \"./VigenereCypherWin.exe 'encrypt/decrypt' 'Input Filename' 'Encryption Key'";
     if (argc != 4)
     {
-        std::cout << "Usage: \"./VigenereCypherWin.exe 'encrypt/decrypt' 'Input Filename' 'Encryption Key'" << std::endl;
+        std::cout << errorString << std::endl;
         exit(1);
     }
 
@@ -19,7 +20,11 @@ int main(int argc, char* argv[])
     else if(enOrDe == "decrypt" || enOrDe == "Decrypt")
         newCypher.decypherInput();
     else
-        std::cout << "Usage:" << argv[0] << "\"encrypt\" or \"decrypt\" \"Input Filename\" \"Encryption Key\"" << "\n";
+    {
+        std::cout << errorString << std::endl;
+        exit(1);
+    }
+
 
     newCypher.outputToFile();
 
